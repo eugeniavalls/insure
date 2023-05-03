@@ -3,12 +3,16 @@
 .section {
   text-align: center;
   margin-bottom: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
   &__container {
     background-image: url(../assets/images/bg-pattern-intro-left-mobile.svg);
     background-repeat: no-repeat;
     padding: 93px 24px;
-    text-align: center;
   }
 
   &__title {
@@ -17,6 +21,10 @@
     font-size: 45px;
     line-height: 48px;
     margin: 0;
+
+    &--work {
+      margin-bottom: 40px;
+    }
 
     &--black {
       position: relative;
@@ -63,14 +71,24 @@
   }
 
   &__image {
-    position: relative;
-    right: -250px;
-    top: -150px;
+    position: absolute;
+    width: 110px;
+    right: 0;
+    bottom: -150px;
+    z-index: 1;
   }
 
-  &--intro {
+  &--dark {
     background-color: var(--color-primary);
     color: var(--white);
-    height: 480px;
+  }
+
+  &--work {
+    padding: 72px 0;
+    margin-inline: 24px;
+    background-image: url(../assets/images/bg-pattern-how-we-work-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
   }
 }
