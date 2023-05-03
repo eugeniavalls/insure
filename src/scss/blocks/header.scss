@@ -1,1 +1,10 @@
-
+.header__top {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: var(--white);
+}

@@ -1,4 +1,8 @@
-@use 'base/normalize.scss';
-@use 'base/initial-reset.scss';
-@use 'config/variables.scss';
-@use 'blocks/body.scss';
+@use "base/normalize.scss";
+@use "base/initial-reset.scss";
+@use "config/variables.scss";
+@use "blocks/body.scss";
+@use "blocks/header.scss";
+@use "blocks/menu.scss";
+@use "blocks/section.scss";
+@use "blocks/buttons.scss";
