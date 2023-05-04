@@ -1,4 +1,5 @@
 @use "../mixins/pseudo.scss" as *;
+@use "../mixins/responsive.scss" as *;
 
 .section {
   text-align: center;
@@ -9,10 +10,23 @@
   justify-content: center;
   position: relative;
 
+  @include responsive(desktop) {
+    text-align: left;
+    margin-bottom: 160px;
+
+    align-items: start;
+  }
+
   &__container {
     background-image: url(../assets/images/bg-pattern-intro-left-mobile.svg);
     background-repeat: no-repeat;
     padding: 93px 24px;
+
+    @include responsive(desktop) {
+      background-image: none;
+      padding: 110px 165px;
+      width: 60%;
+    }
   }
 
   &__title {
@@ -22,8 +36,20 @@
     line-height: 48px;
     margin: 0;
 
+    @include responsive(desktop) {
+      font-size: 72px;
+      line-height: 64px;
+      margin-bottom: 40px;
+    }
+
     &--work {
       margin-bottom: 40px;
+
+      @include responsive(desktop) {
+        margin-bottom: 0;
+        font-size: 65px;
+        width: 60%;
+      }
     }
 
     &--black {
@@ -36,8 +62,26 @@
         @include pseudo(150px, 1px) {
           top: -40px;
           background-color: var(--color-line);
+
+          @include responsive(desktop) {
+            left: 0;
+            top: -60px;
+          }
         }
       }
+    }
+  }
+
+  &__features-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include responsive(desktop) {
+      align-items: start;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 1.875rem;
     }
   }
 
@@ -45,6 +89,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @include responsive(desktop) {
+      align-items: start;
+    }
   }
 
   &__icon {
@@ -76,6 +124,23 @@
     right: 0;
     bottom: -150px;
     z-index: 1;
+
+    @include responsive(desktop) {
+      width: 400px;
+      top: -50px;
+      z-index: 1;
+    }
+  }
+
+  &__curve {
+    display: none;
+
+    @include responsive(desktop) {
+      display: block;
+      position: absolute;
+      top: 350px;
+      left: 0px;
+    }
   }
 
   &--dark {
@@ -90,5 +155,31 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+    display: flex;
+    flex-direction: column;
+
+    @include responsive(desktop) {
+      padding: 70px 80px;
+      margin-inline: 165px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-image: url(../assets/images/bg-pattern-how-we-work-desktop.svg);
+    }
+  }
+
+  &--intro {
+    @include responsive(desktop) {
+      text-align: left;
+      margin-bottom: 300px;
+      align-items: start;
+      justify-content: center;
+    }
+  }
+
+  &--icons {
+    @include responsive(desktop) {
+      padding: 0 165px;
+    }
   }
 }

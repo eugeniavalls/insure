@@ -1,3 +1,11 @@
+@use "../mixins/responsive.scss" as *;
+
+.header {
+  @include responsive(desktop) {
+    position: relative;
+    z-index: 10;
+  }
+}
 .header__top {
   position: fixed;
   width: 100%;
@@ -7,4 +15,9 @@
   justify-content: space-between;
   padding: 24px;
   background-color: var(--white);
+
+  @include responsive(desktop) {
+    padding: 30px 165px;
+    position: relative;
+  }
 }
