@@ -178,6 +178,7 @@
   }
 
   &--icons {
+    background-color: var(--white);
     @include responsive(desktop) {
       padding: 0 165px;
     }
